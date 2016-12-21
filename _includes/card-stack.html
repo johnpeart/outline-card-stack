@@ -1,148 +1,18 @@
+<div id="card-stack" class="row">
 
-<div class="card-stack-wrapper">
-    <div class="card-stack card-stack--fan ui-fan-stack" data-length="6" data-view-count="1">
-        <button class="card-stack__pagination-button" data-direction="previous"></button>
-        <div class="card-stack__container">
-            <div class="card-stack__elements">
-				<a class="card-stack__element" href="/post/719/people-are-losing-social-security-benefits-because-of-old-student-loans" data-index="0">
-				<div class="card-degraded
-				  color_filter--lightpink-acidblue
-				  filter_type--monotone
-				  text_color--color
-				  text_size--xsmall">
-				    <div class="card-degraded__card outline-card-degraded outline-card-degraded--2 outline-card-degraded--2--3-outlines">
-				        <div class="outline-card-degraded__bg" data-color-filter="lightpink-acidblue">
-				<div class="card__bg__image">
-				<img src="https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161221-xyLH1GqVc7VFvF59buct%26start%3D000000%26end%3D4745D1?auto=&amp;fm=jpg&amp;q=60&amp;w=1000&amp;s=b2e65bd77457b30ba196285284ef3192" srcset="https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161221-xyLH1GqVc7VFvF59buct%26start%3D000000%26end%3D4745D1?auto=&amp;fm=jpg&amp;q=60&amp;w=320&amp;s=781015249075def7b7f7770e530a37cf 320w, https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161221-xyLH1GqVc7VFvF59buct%26start%3D000000%26end%3D4745D1?auto=&amp;fm=jpg&amp;q=60&amp;w=640&amp;s=76f2a1fe1088d81c19490b7312b3bdf0 640w" alt="">
-				</div>
-				        </div>
+	{% for post in site.posts limit: 5 %}
 
-				        <div class="outline-card-degraded__content">
-				            <h3 class="outline-card-degraded__title">
-				                <span class="text">People are losing Social Security pay because of federal student loan debt</span>
-				            </h3>
-				        </div>
-				    </div>
-				</div>
-				</a>
-				<a class="card-stack__element" href="/post/716/the-us-returned-some-post-war-land-to-japan" data-index="1">
-				<div class="card-degraded
-				  color_filter--black-white
-				  filter_type--none
-				  text_color--color
-				  text_size--small">
-				    <div class="card-degraded__card outline-card-degraded outline-card-degraded--2 outline-card-degraded--2--3-outlines">
-				        <div class="outline-card-degraded__bg" data-color-filter="black-white">
-				<div class="card__bg__image">
-				<img src="https://outline-prod.imgix.net/20161221-BnoZ0IkbK0CjHvP1EG6y?auto=&amp;fm=jpg&amp;q=60&amp;w=1000&amp;s=94d76d8ef78222eb9c882713e0c9b849" srcset="https://outline-prod.imgix.net/20161221-BnoZ0IkbK0CjHvP1EG6y?auto=&amp;fm=jpg&amp;q=60&amp;w=320&amp;s=f9928f628613f45d2b9d62112d5c65d5 320w, https://outline-prod.imgix.net/20161221-BnoZ0IkbK0CjHvP1EG6y?auto=&amp;fm=jpg&amp;q=60&amp;w=640&amp;s=d21b10447d3041713a52ad7fa824b4eb 640w" alt="">
-				</div>
-				        </div>
+		<div class="card-stack-card">
+			<article>
+				<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+			</article>
+		</div>
 
-				        <div class="outline-card-degraded__content">
-				            <h3 class="outline-card-degraded__title">
-				                <span class="text">The US returned some lands to Japan</span>
-				            </h3>
-				        </div>
-				    </div>
-				</div>
-				</a>
-				<a class="card-stack__element" href="/post/699/photographer-recounts-what-it-s-like-to-document-an-assassination" data-index="2">
-				<div class="card-degraded
-				  color_filter--black-white
-				  filter_type--none
-				  text_color--color
-				  text_size--small">
-				  <div class="card-degraded__card quote-card-degraded quote-card-degraded--1 black-white">
-				        <div class="quote-card-degraded__bg" data-color-filter="black-white">
-				<div class="card__bg__image">
-				<img src="https://outline-prod.imgix.net/20161220-5szAvi7O81lWIKKu0QBH?auto=&amp;fm=jpg&amp;q=60&amp;w=1000&amp;s=3d466ca0ce5c4cd692b0943cafe8a6b0" srcset="https://outline-prod.imgix.net/20161220-5szAvi7O81lWIKKu0QBH?auto=&amp;fm=jpg&amp;q=60&amp;w=320&amp;s=9870a72de468723521337f2d74e42541 320w, https://outline-prod.imgix.net/20161220-5szAvi7O81lWIKKu0QBH?auto=&amp;fm=jpg&amp;q=60&amp;w=640&amp;s=bf761a6e127d89880b42c4f58c9e67d9 640w" alt="">
-				</div>
-				        </div>
+	{% endfor %}
 
-				        <div class="quote-card-degraded__content">
-				            <div class="quote-card-degraded__body">
-				                <h3 class="quote-card-degraded__quote">
-				                    <span class="text">I'm here. Even if I get hit and injured, or killed, I'm a journalist. I have to do my work.</span>
-				                </h3>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				</a>
-				<a class="card-stack__element" href="/post/631/the-white-house-trumps" data-index="3">
-				<div class="card-degraded
-				  color_filter--lightpink-acidblue
-				  filter_type--monotone
-				  text_color--white
-				  text_size--small">
-				  <div class="card-degraded__card quote-card-degraded quote-card-degraded--1 lightpink-acidblue">
-				        <div class="quote-card-degraded__bg" data-color-filter="lightpink-acidblue">
-				<div class="card__bg__image">
-				<div class="image-transformer
-				  image-transformer--effect-none
-				  image-transformer--variation-tile" style="background-image: url('https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161216-HkE29hO0YKsbwqjX5D2U%26start%3D000000%26end%3D4745D1?auto=format&amp;crop=entropy&amp;fit=crop&amp;h=100&amp;q=60&amp;w=100&amp;s=d2089a44fb086269e48233375f8f631a');">
-				</div>
-				</div>
-				        </div>
-
-				        <div class="quote-card-degraded__content">
-				            <div class="quote-card-degraded__body">
-				                <h3 class="quote-card-degraded__quote">
-				                    <span class="text">That is the one great thing about the White House: It adapts to all of its occupants.</span>
-				                </h3>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				</a>
-				<a class="card-stack__element" href="/post/661/fast-food-ads-work-really-well-on-kids-prone-to-obesity" data-index="4">
-				<div class="card-degraded
-				  color_filter--black-white
-				  filter_type--none
-				  text_color--color
-				  text_size--large">
-				    <div class="card-degraded__card headline-card-degraded headline-card-degraded--1">
-				        <div class="headline-card-degraded__bg" data-color-filter="black-white">
-				<div class="card__bg__image">
-				<img src="https://outline-prod.imgix.net/20161219-jhK8nRX0rzllB6bRUNlx?auto=&amp;fm=jpg&amp;q=60&amp;w=1000&amp;s=3991ac51b95075ce02ee917819fc15b2" srcset="https://outline-prod.imgix.net/20161219-jhK8nRX0rzllB6bRUNlx?auto=&amp;fm=jpg&amp;q=60&amp;w=320&amp;s=cf5166d7995d625bc3430780eb69d0a1 320w, https://outline-prod.imgix.net/20161219-jhK8nRX0rzllB6bRUNlx?auto=&amp;fm=jpg&amp;q=60&amp;w=640&amp;s=c34ba650cdbab6900731d8b772c51f05 640w" alt="">
-				</div>
-				        </div>
-
-				        <div class="headline-card-degraded__content">
-				            <div class="headline-card-degraded__title">
-				                <h3 class="headline-card-degraded__headline">
-				                    <span class="text">Fast food ads work really well on kids prone to obesity</span>
-				                </h3>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				</a>
-				<a class="card-stack__element" href="/post/632/britain-approves-procedure-to-make-babies-from-3-parents" data-index="5">
-				<div class="card-degraded
-				  color_filter--red-blue
-				  filter_type--duotone
-				  text_color--white
-				  text_size--medium">
-				    <div class="card-degraded__card headline-card-degraded headline-card-degraded--1">
-				        <div class="headline-card-degraded__bg" data-color-filter="red-blue">
-				<div class="card__bg__image">
-				<img src="https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161216-c6DzHV0dI30zgDqZy2Y6%26start%3D04284A%26end%3DCE2C36?auto=&amp;fm=jpg&amp;q=60&amp;w=1000&amp;s=d97f59e4e92c0018687cd51cb1b62278" srcset="https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161216-c6DzHV0dI30zgDqZy2Y6%26start%3D04284A%26end%3DCE2C36?auto=&amp;fm=jpg&amp;q=60&amp;w=320&amp;s=656a2d013fef449c8cd0e090196de3a0 320w, https://im-dev-proxy.imgix.net/https%3A%2F%2Fd2poymsztgsqkb.cloudfront.net%2Fv1%2Fduotone%2Fpreview%3Furl%3Dhttps%3A%2F%2Foutline-prod.imgix.net%2F20161216-c6DzHV0dI30zgDqZy2Y6%26start%3D04284A%26end%3DCE2C36?auto=&amp;fm=jpg&amp;q=60&amp;w=640&amp;s=30d86913d27df383863f84a1bf57281c 640w" alt="">
-				</div>
-				        </div>
-
-				        <div class="headline-card-degraded__content">
-				            <div class="headline-card-degraded__title">
-				                <h3 class="headline-card-degraded__headline">
-				                    <span class="text">Britain approves procedure to make babies from three parents</span>
-				                </h3>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				</a>
-            </div>
-        </div>
-        <button class="card-stack__pagination-button" data-direction="next"></button>
-    </div>
+		<div class="card-stack-card">
+			<article>
+				<h2><a href="{{ post.url }}">More</a></h2>
+			</article>
+		</div>
 </div>

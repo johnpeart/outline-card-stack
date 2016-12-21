@@ -1,5 +1,5 @@
 div#home.container-fluid {
-	min-height: 100vh;
+	padding: 10vh 0;
 
 	div#content {
 
@@ -17,6 +17,10 @@ div#home.container-fluid {
 				content: "."
 			}
 
+		}
+
+		p {
+			text-align: 				center;
 		}
 
 	}
