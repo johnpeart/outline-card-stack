@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body id="four-oh-four">
+
+	<div id="four-oh-four" class="four-oh-four-container">
+
+			<div class="overlay">404</div>
+
+			<div class="screen">
+
+				<div id="home" class="container lionel">
+
+					<div class="row">
+
+						<div id="error-msg" class="col-xs-12 col-md-8">
+
+							<h1>Hello?</h1>
+
+							<p class="h2">Is it me you're looking for?</p>
+
+							<p>Looks like you're a little lost. Maybe try the <a href="{{ site.url | append: site.baseurl }}">home page?</a></p>
+
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+	</div>
+
+	{% include scripts.html %}
+
+	{% include footer.html %}
+
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+footer {
+
+	color: $body-color;
+
+	a {
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	display: block;
+	position: relative;
+
+	min-height: 30vh;
+	padding: 2rem 0;
+
+	background: $footer-bg;
+
+	div.ident {
+		padding: 4rem 0 1rem 0;
+
+		a.footer-brand {
+			width: 3rem;
+			height: 3rem;
+			text-align: center;
+			vertical-align: middle;
+
+			padding: 0.5rem !important;
+
+			color: $body-color;
+			background: $footer-bg;;
+			border: 1px solid $body-color;
+			text-stroke: 1px $body-color;
+			text-fill-color: $footer-bg;
+			-webkit-text-stroke: 1px $body-color;
+			-webkit-text-fill-color: $footer-bg;
+			font-weight: 600;
+
+			&:hover, &:focus {
+				color: $footer-bg;;
+				background: $body-color;
+				border: 1px solid $body-color;
+				text-stroke: 1px $footer-bg;;
+				text-fill-color: $footer-bg;;
+				-webkit-text-stroke: 1px $footer-bg;;
+				-webkit-text-fill-color: $footer-bg;;
+				text-decoration: none;
+			}
+
+		}
+
+	}
+
+}

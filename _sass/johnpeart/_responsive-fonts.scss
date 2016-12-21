@@ -1,0 +1,52 @@
+@include media-breakpoint-only(xs) {
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+	  margin-bottom: $headings-margin-bottom;
+	  line-height: $headings-line-height;
+	}
+
+	h1, .h1 { font-size: $font-size-h1 / 1.25; }
+	h2, .h2 { font-size: $font-size-h2 / 1.25; }
+	h3, .h3 { font-size: $font-size-h3 / 1.25; }
+	h4, .h4 { font-size: $font-size-h4 / 1.25; }
+	h5, .h5 { font-size: $font-size-h5 / 1.25; }
+	h6, .h6 { font-size: $font-size-h6 / 1.25; }
+
+	.lead {
+	  font-size: $lead-font-size / 1.5;
+	  font-weight: $lead-font-weight;
+	}
+
+	// Type display classes
+	.display-1 {
+	  font-size: $display1-size / 1.25;;
+	}
+	.display-2 {
+	  font-size: $display2-size / 1.25;;
+	}
+	.display-3 {
+	  font-size: $display3-size / 1.25;;
+	}
+	.display-4 {
+	  font-size: $display4-size / 1.25;;
+	}
+
+
+}
+
+@include media-breakpoint-only(sm) {
+
+}
+
+@include media-breakpoint-only(md) {
+
+}
+
+@include media-breakpoint-only(lg) {
+
+}
+
+@include media-breakpoint-only(xl) {
+
+}

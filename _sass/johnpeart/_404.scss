@@ -1,0 +1,344 @@
+body#four-oh-four {
+	background: #000000 !important;
+  	color: white;
+	font-family: 'Press Start 2P', monospace;
+
+	footer {
+
+		background: #1d1d1d;
+
+		a.footer-brand {
+			width: 3rem;
+			height: 3rem;
+			text-align: center;
+			vertical-align: middle;
+
+			padding: 0.5rem !important;
+
+			color: $body-color;
+			background: #1d1d1d;;
+			border: 1px solid $body-color;
+			text-stroke: 1px $body-color;
+			text-fill-color: #1d1d1d;
+			-webkit-text-stroke: 1px $body-color;
+			-webkit-text-fill-color: #1d1d1d;
+			font-weight: 600;
+
+			&:hover, &:focus {
+				color: #1d1d1d;;
+				background: $body-color;
+				border: 1px solid $body-color;
+				text-stroke: 1px #1d1d1d;;
+				text-fill-color: #1d1d1d;;
+				-webkit-text-stroke: 1px #1d1d1d;;
+				-webkit-text-fill-color: #1d1d1d;;
+				text-decoration: none;
+			}
+
+		}
+
+	}
+
+	div#error-msg {
+		margin: 25vh 0;
+	}
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5278;
+  }
+  5% {
+    opacity: 0.76041;
+  }
+  10% {
+    opacity: 0.38657;
+  }
+  15% {
+    opacity: 0.50718;
+  }
+  20% {
+    opacity: 0.67415;
+  }
+  25% {
+    opacity: 0.96419;
+  }
+  30% {
+    opacity: 0.28616;
+  }
+  35% {
+    opacity: 0.08546;
+  }
+  40% {
+    opacity: 0.64032;
+  }
+  45% {
+    opacity: 0.60333;
+  }
+  50% {
+    opacity: 0.80828;
+  }
+  55% {
+    opacity: 0.48356;
+  }
+  60% {
+    opacity: 0.20399;
+  }
+  65% {
+    opacity: 0.05261;
+  }
+  70% {
+    opacity: 0.16979;
+  }
+  75% {
+    opacity: 0.69148;
+  }
+  80% {
+    opacity: 0.92933;
+  }
+  85% {
+    opacity: 0.29447;
+  }
+  90% {
+    opacity: 0.12921;
+  }
+  95% {
+    opacity: 0.90281;
+  }
+  100% {
+    opacity: 0.87747;
+  }
+}
+.four-oh-four-container {
+  background: #000000;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.four-oh-four-container::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 20000000;
+  pointer-events: none;
+}
+.four-oh-four-container::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  z-index: 20000000;
+  pointer-events: none;
+}
+
+.four-oh-four-container::after {
+  animation: flicker 0.15s infinite;
+}
+
+div.lionel {
+	min-height: 100vh;
+	background-image: url('//johnpeart.org/assets/404.jpg');
+	background-size: contain;
+	background-position: right center;
+	background-repeat: no-repeat;
+	image-rendering: pixelated;
+}
+
+@keyframes turn-on {
+  0% {
+    transform: scale(1, 0.8) translate3d(0, 0, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 1;
+  }
+  3.5% {
+    transform: scale(1, 0.8) translate3d(0, 100%, 0);
+  }
+  3.6% {
+    transform: scale(1, 0.8) translate3d(0, -100%, 0);
+    opacity: 1;
+  }
+  9% {
+    transform: scale(1.3, 0.6) translate3d(0, 100%, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 0;
+  }
+  11% {
+    transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(0) brightness(0);
+    filter: contrast(0) brightness(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(1) brightness(1.2) saturate(1.3);
+    filter: contrast(1) brightness(1.2) saturate(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes turn-off {
+  0% {
+    transform: scale(1, 1.3) translate3d(0, 0, 0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.3, 0.001) translate3d(0, 0, 0);
+    -webkit-filter: brightness(10);
+    filter: brightness(10);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: scale(0, 0.0001) translate3d(0, 0, 0);
+    -webkit-filter: brightness(50);
+    filter: brightness(50);
+  }
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.four-oh-four-container > .screen {
+  animation: turn-off 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  animation-fill-mode: forwards;
+}
+
+.four-oh-four-container > .screen {
+  animation: turn-on 4s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes overlay-anim {
+  0% {
+    visibility: hidden;
+  }
+  20% {
+    visibility: hidden;
+  }
+  21% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.overlay {
+  color: #00FF00;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: $font-size-base * 2.5;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 500000;
+}
+
+.four-oh-four-container .overlay {
+  animation: overlay-anim 5s linear;
+  animation-fill-mode: forwards;
+}
+
+
+@include media-breakpoint-only(xs) {
+
+	.overlay {
+	  color: #00FF00;
+	  position: absolute;
+	  top: 1rem;
+	  right: 1rem;
+	  font-size: $font-size-base * 1.5;
+	  visibility: hidden;
+	  z-index: 500000;
+	  pointer-events: none;
+	}
+
+}
+
+@include media-breakpoint-only(sm) {
+
+}
+
+@include media-breakpoint-only(md) {
+
+}
+
+@include media-breakpoint-only(lg) {
+
+}
+
+@include media-breakpoint-only(xl) {
+
+}
+
+div#four-oh-four {
+
+	h1:first-of-type {
+
+		font-size: $font-size-h1 * 2;
+		margin: 3rem 0 2rem 0;
+
+		color: #00FF00;
+
+	}
+
+	p {
+		margin: 0;
+		a {
+			&:hover, &:focus {
+				color: #00FF00;
+			}
+		}
+	}
+
+	@include media-breakpoint-between(xs, sm) {
+
+		h1:first-of-type {
+			font-size: $font-size-h1 / 1.5 !important;
+			margin: 3rem 0 2rem 0;
+		}
+
+		p {
+			font-size: $font-size-base / 1.25;
+		}
+
+
+
+	}
+
+	@include media-breakpoint-only(sm) {
+
+	}
+
+	@include media-breakpoint-only(md) {
+
+	}
+
+	@include media-breakpoint-only(lg) {
+
+	}
+
+	@include media-breakpoint-only(xl) {
+
+	}
+
+}
+

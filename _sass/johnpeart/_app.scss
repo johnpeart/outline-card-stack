@@ -1,0 +1,778 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) translateZ(0)
+    }
+
+    to {
+        transform: rotate(1turn) translateZ(0)
+    }
+}
+
+@keyframes translate {
+    0% {
+        transform: translateX(0) translateY(0) translateZ(0)
+    }
+
+    to {
+        transform: translateX(50%) translateY(50%) translateZ(0)
+    }
+}
+
+@keyframes bounce {
+    0%, to {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(-40px)
+    }
+}
+
+@keyframes degradedCardSwipeHint {
+    0%, to {
+        transform: translateX(0) translateY(0) translateZ(0) rotate(0deg);
+        transform-origin: 10% 90%
+    }
+
+    50% {
+        transform: translateX(0) translateY(0) translateZ(0) rotate(-10deg);
+        transform-origin: 10% 90%
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100vw)
+    }
+
+    to {
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes bop {
+    0%, to {
+        transform: translateY(-10px)
+    }
+
+    50% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes bobble {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(-30deg)
+    }
+
+    50% {
+        transform: rotate(15deg)
+    }
+
+    90% {
+        transform: rotate(-5deg)
+    }
+
+    to {
+        transform: rotate(0deg)
+    }
+}
+
+@keyframes noop {
+    0% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.ui-draggable-active {
+    will-change: transform
+}
+
+.curiosity__item__asset img, .sentence-chunk__element__asset img,
+.workhorse__asset img {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: top
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: 18px;
+    line-height: 1.77778;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased
+}
+
+.main {
+    transform: translateZ(0) scale(1);
+    transform-origin: 50vw 50vh;
+    transition: transform .5s;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 998
+}
+
+.main, .main:before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.main:before {
+    position: absolute;
+    content: "";
+    pointer-events: none;
+    z-index: 2000;
+    visibility: hidden;
+    border: 30px solid #fff
+}
+
+.layer {
+    transform-origin: 50vw 50vh
+}
+
+.layer--transition-old-out {
+    animation: layer--transition-old-out .6s both ease-in-out;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.layer--transition-new-in {
+    animation: layer--transition-new-in .6s .1s both ease-in-out;
+    transform: translateY(100vh);
+    overflow: hidden;
+    pointer-events: none
+}
+
+.layer--transition-old-in {
+    animation: layer--transition-old-in .6s .1s both ease-in-out;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.layer--transition-new-out {
+    animation: layer--transition-new-out .6s both ease-in-out;
+    overflow: hidden;
+    pointer-events: none
+}
+
+@keyframes layer--transition-old-out {
+    0% {
+        transform: translateZ(0) scale(1);
+        opacity: 1
+    }
+
+    to {
+        transform: translateZ(0) scale(.5);
+        opacity: .6
+    }
+}
+
+@keyframes layer--transition-old-in {
+    0% {
+        transform: translateZ(0) scale(.5);
+        opacity: .6
+    }
+
+    to {
+        transform: translateZ(0) scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes layer--transition-new-in {
+    0% {
+        transform: translate3d(0, 100vh, 0)
+    }
+
+    to {
+        transform: translateZ(0)
+    }
+}
+
+@keyframes layer--transition-new-out {
+    0% {
+        transform: translateZ(0)
+    }
+
+    to {
+        transform: translate3d(0, 100vh, 0)
+    }
+}
+
+.path {
+    height: 100%
+}
+
+.path__plane {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%
+}
+
+.path__element {
+    overflow: hidden
+}
+
+.path__element[data-state=current] {
+    z-index: 2
+}
+
+.path.ui-path-swipe .path__plane {
+    overflow: visible;
+    height: 100%
+}
+
+.path.ui-path-swipe .path__element {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1
+}
+
+.path.ui-path-swipe .path__element[data-state=previous] {
+    left: -100%
+}
+
+.path.ui-path-swipe .path__element[data-state=next] {
+    left: 100%
+}
+
+.path.ui-path-swipe .path__element__content {
+    height: 100%
+}
+
+.path.ui-path-swipe .ui-transition-in--1, .path.ui-path-swipe .ui-transition-in--2 {
+    opacity: 1;
+    transition: opacity .5s ease-in
+}
+
+.path.ui-path-swipe .ui-transition-in--2 {
+    transition-delay: .3s
+}
+
+.path.ui-path-swipe .path__element[data-state=next] .ui-transition-in--1,
+.path.ui-path-swipe .path__element[data-state=next] .ui-transition-in--2 {
+    opacity: 0;
+    transition: none;
+    will-change: opacity
+}
+
+.card-stack-wrapper {
+    position: relative
+}
+
+.card-stack:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.stack-chunk__headline + .card-stack {
+    margin-top: -15px
+}
+
+.card-stack__container {
+    position: relative;
+    z-index: 1
+}
+
+.card-stack__element {
+    background: none;
+    color: inherit;
+    text-decoration: inherit;
+    border: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    display: block;
+    overflow: hidden
+}
+
+.card-stack__element:active, .card-stack__element:focus {
+    outline: none
+}
+
+.card-stack__element:before {
+    content: "";
+    display: block;
+    padding-bottom: 150%
+}
+
+.card-stack__element .card-degraded {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.card-stack__element[data-index="0"] {
+    z-index: 5
+}
+
+.card-stack__element[data-index="1"] {
+    z-index: 4
+}
+
+.card-stack__element[data-index="2"] {
+    z-index: 3
+}
+
+.card-stack__element[data-index="3"] {
+    z-index: 2
+}
+
+.card-stack__element[data-index="4"] {
+    z-index: 1
+}
+
+.card-stack--fan {
+    -ms-overflow-style: none
+}
+
+.card-stack--fan::-webkit-scrollbar {
+    display: none
+}
+
+.card-stack--fan .card-stack__pagination-button, .card-stack--fan.ui-fan-stack.ui-scroll-end .card-stack__pagination-button[data-direction=next],
+.card-stack--fan.ui-fan-stack.ui-scroll-start .card-stack__pagination-button[data-direction=previous] {
+    display: none
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__pagination-button {
+    background: none;
+    color: inherit;
+    text-decoration: inherit;
+    border: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__pagination-button:active,
+.card-stack--fan.ui-fan-stack .card-stack__pagination-button:focus {
+    outline: none
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__pagination-button[data-direction=previous] {
+    left: 0;
+}
+
+.page.home .card-stack--fan.ui-fan-stack .card-stack__pagination-button[data-direction=previous] {
+    left: -80px
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__pagination-button[data-direction=next] {
+    right: 0;
+}
+
+.page.home .card-stack--fan.ui-fan-stack .card-stack__pagination-button[data-direction=next] {
+    right: -80px
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__elements {
+    pointer-events: none
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__elements:after {
+    content: "";
+    display: inline-block;
+    width: calc(((100vw - 640px) / 2))
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element {
+    pointer-events: auto;
+    transform: translateX(0) translateY(10px) rotate(0);
+    transition: transform .3s .3s
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="0"] {
+    transform: translateX(0) translateY(10px) rotate(-20deg);
+    transform-origin: 100% 0
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="1"] {
+    transform: translateX(calc((100% + 40px) * -.5)) translateY(10px) rotate(-10deg);
+    transform-origin: 75% 0
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="2"] {
+    transform: translateX(calc((100% + 40px) * -1)) translateY(10px) rotate(0deg);
+    transform-origin: 50% 0
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="3"] {
+    transform: translateX(calc((100% + 40px) * -1.5)) translateY(10px) rotate(10deg);
+    transform-origin: 25% 0
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="4"] {
+    transform: translateX(calc((100% + 40px) * -2)) translateY(10px) rotate(20deg);
+    transform-origin: 0 0
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="4"] ~ .card-stack__element {
+    visibility: hidden;
+    transition: transform .3s 0s, visibility 0s .3s;
+    transition-timing-function: ease-in
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="5"] {
+    transform: translateX(calc((100% + 40px) * -1));
+    z-index: -1
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="6"] {
+    transform: translateX(calc((100% + 40px) * -2));
+    z-index: -2
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="7"] {
+    transform: translateX(calc((100% + 40px) * -3));
+    z-index: -3
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="8"] {
+    transform: translateX(calc((100% + 40px) * -4));
+    z-index: -4
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="9"] {
+    transform: translateX(calc((100% + 40px) * -5));
+    z-index: -5
+}
+
+.card-stack--fan.ui-fan-stack .card-stack__element[data-index="10"] {
+    transform: translateX(calc((100% + 40px) * -6));
+    z-index: -6
+}
+
+.card-stack--fan.card-stack--fan.ui-fan-stack:hover .card-stack__element.card-stack__element {
+    transition: transform .3s;
+    transform: translateX(0) translateY(0) rotate(0);
+    transition-delay: 0s
+}
+
+.card-stack--fan.card-stack--fan.ui-fan-stack:hover .card-stack__element[data-index="4"] ~ .card-stack__element {
+    visibility: visible;
+    transition: transform .3s .3s, visibility 0s .3s
+}
+
+.card-stack--fan.ui-fan-stack[data-length="3"] .card-stack__elements:after {
+    display: none
+}
+
+
+.image-transformer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: repeat
+}
+
+.image-transformer--variation-tile {
+    background-size: 20vw auto
+}
+
+.image-transformer--effect-rotate {
+    top: -200vw;
+    right: -100vh;
+    bottom: -100vw;
+    left: -200vh;
+    transform-origin: 200vh 200vw
+}
+
+.image-transformer--effect-translate {
+    top: -100vh;
+    left: -100vw
+}
+
+.ui-path-swipe .image-transformer--effect-rotate, .ui-path-swipe .image-transformer--effect-translate {
+    animation-play-state: paused
+}
+
+.ui-path-swipe .path__element[data-state=current] .image-transformer--effect-rotate,
+.ui-path-swipe .path__element[data-state=current] .image-transformer--effect-translate {
+    animation-play-state: running
+}
+
+.card-degraded .image-transformer {
+    animation: none
+}
+
+.card-grid-chunk .card-stack {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+
+@media(min-width:960px) {
+
+    .card-stack__elements {
+        margin-left: -20px;
+        margin-right: -20px
+    }
+
+    .card-stack__element {
+        box-shadow: 0 5px 7px rgba(0, 0, 0, .25);
+        width: 186.66667px;
+        margin-left: 20px;
+        margin-right: 20px
+    }
+
+    .card-stack--fan {
+        overflow: auto
+    }
+
+    .card-stack--fan.ui-fan-stack:not(:hover) {
+        overflow: hidden
+    }
+
+    .truncater .card-stack--fan {
+        pointer-events: none
+    }
+
+    .page.home .card-stack--fan {
+        margin-left: -80px;
+        margin-right: -80px
+    }
+
+    .card-stack--fan .card-stack__container {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .card-stack--fan .card-stack__elements {
+        font-size: 0;
+        white-space: nowrap;
+        display: inline-block;
+        padding-top: 2px;
+        padding-bottom: 90px;
+        transition: none
+    }
+
+    .card-stack--fan .card-stack__elements > * {
+        font-size: 1rem;
+        white-space: normal
+    }
+
+    .card-stack--fan .card-stack__element {
+        display: inline-block
+    }
+
+    .card-stack--fan.ui-fan-stack .card-stack__pagination-button {
+        width: calc(((100vw - 640px) / 2))
+    }
+
+    .card-stack--fan.ui-fan-stack[data-length="3"] .card-stack__element[data-index="1"] {
+        transform: translateX(0) translateY(10px) rotate(0deg);
+        transform-origin: 50% 0
+    }
+
+    .card-stack--fan.ui-fan-stack[data-length="3"] .card-stack__element[data-index="2"] {
+        transform: translateX(0) translateY(10px) rotate(20deg);
+        transform-origin: 0 0
+    }
+
+    .card-stack--fan.ui-fan-stack[data-length="4"] .card-stack__element[data-index="0"] {
+        transform: translateX(0) translateY(10px) rotate(-20deg);
+        transform-origin: 100% 0
+    }
+
+    .card-stack--fan.ui-fan-stack[data-length="4"] .card-stack__element[data-index="1"] {
+        transform: translateX(calc((100% + 40px) * -.3333)) translateY(10px) rotate(-6.66667deg);
+        transform-origin: 66.666% 0
+    }
+
+    .card-stack--fan.ui-fan-stack[data-length="4"] .card-stack__element[data-index="2"] {
+        transform: translateX(calc((100% + 40px) * -.6666)) translateY(10px) rotate(6.66667deg);
+        transform-origin: 33.333% 0
+    }
+
+    .card-stack--fan.ui-fan-stack[data-length="4"] .card-stack__element[data-index="3"] {
+        transform: translateX(calc((100% + 40px) * -1)) translateY(10px) rotate(20deg);
+        transform-origin: 0 0
+    }
+
+    .card-stack--grid .card-stack__elements {
+        font-size: 0;
+        margin: -20px
+    }
+
+    .card-stack--grid .card-stack__elements > * {
+        font-size: 1rem
+    }
+
+    .grid_type--organic .card-stack--grid .card-stack__elements {
+        margin: -20px 0
+    }
+
+    .card-stack--grid .card-stack__element {
+        display: inline-block;
+        margin: 20px;
+        vertical-align: top;
+        transition: transform .3s;
+        width: calc(100% / 3 - 40px)
+    }
+
+    .card-stack--grid .card-stack__element:hover {
+        transform: scale(1.05)
+    }
+
+    .image-transformer--variation-tile {
+        background-size: 10vw
+    }
+
+    .image-transformer--effect-translate {
+        animation-duration: 9.6s
+    }
+
+}
+
+
+@media(min-width:1280px) {
+
+    .card-stack__element {
+        width: 293.33333px
+    }
+
+    .card-stack--fan .card-stack__container {
+        max-width: 960px
+    }
+
+    .card-stack--fan.ui-fan-stack .card-stack__elements:after, .card-stack--fan.ui-fan-stack .card-stack__pagination-button {
+        width: calc(((100vw - 960px) / 2))
+    }
+
+}
+
+@media(max-width:959px) {
+
+    .card-stack__elements {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 320px
+    }
+
+    .card-stack__element {
+        width: 100%;
+        transform: translateX(0) translateY(0) translateZ(0);
+        cursor: -webkit-grab;
+        cursor: grab
+    }
+
+    .card-stack__element:not(.ui-draggable-active) {
+        transition: transform .1s
+    }
+
+    .card-stack__element:not([data-index="0"]) {
+        position: absolute;
+        left: 0;
+        top: 0
+    }
+
+    .card-stack__element[data-index="1"] {
+        transform: translateX(13px) translateY(0) translateZ(0) scale(.97)
+    }
+
+    .card-stack__element[data-index="2"] {
+        transform: translateX(26px) translateY(0) translateZ(0) scale(.94)
+    }
+
+    .card-stack__element:not([data-index="0"]):not([data-index="1"]):not([data-index="2"]) {
+        display: none
+    }
+
+    .card-stack.ui-in-view--animating[data-view-count="1"]:not(.ui-draggable-active) .card-stack__element[data-index="0"] {
+        animation: degradedCardSwipeHint .8s
+    }
+
+}
+
+

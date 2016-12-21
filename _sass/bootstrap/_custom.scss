@@ -1,0 +1,21 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+$font-size-base: 		1.2rem !default;
+$lead-font-size: 		$font-size-base * 1.5 !default;
+
+$body-bg: 				#1d1d1d;
+$body-color: 			#ffffff;
+$body-color-inverse: 	#1d1d1d;
+
+$brand-primary: 		$body-bg;
+
+$footer-bg:				darken($body-bg, 3%);
+
+$link-color:            $body-color !default;
+$link-color-inverse:    $body-bg !default;
+$link-decoration:       underline !default;
+$link-hover-color:      lighten($body-bg, 50%) !default;
+$link-hover-decoration: underline !default;

@@ -1,0 +1,24 @@
+div#home.container-fluid {
+	min-height: 100vh;
+
+	div#content {
+
+		h1:first-of-type {
+
+			@include 					text-shadow-shallow;
+
+			text-align: 				center;
+			font-weight: 				600;
+
+			font-size: 					$font-size-h1 * 2.0;
+			margin: 					4rem 0 2rem 0;
+
+			&:after {
+				content: "."
+			}
+
+		}
+
+	}
+
+}

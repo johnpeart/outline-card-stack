@@ -1,0 +1,15 @@
+nav.navbar {
+
+	text-align: center !important;
+
+	margin: 0 0 2rem 0;
+
+	a {
+		text-decoration: none;
+
+		&:hover, &:focus {
+			text-decoration: underline !important;
+		}
+	}
+
+}

@@ -1,0 +1,6 @@
+img {
+	@extend .img-fluid;
+	@include box-shadow-shallow;
+
+	margin: 1rem 0;
+}

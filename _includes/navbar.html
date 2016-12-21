@@ -1,0 +1,31 @@
+{% if page.layout != 'home' %}
+
+	<div class="container">
+		<div class="row flex-items-xs-center">
+			<div class="col-sm-10">
+				<nav class="navbar navbar-full">
+
+					<ul id="menu" class="nav navbar-nav row">
+
+						<li class="nav-item {% if page.layout == 'home'  %}active{% endif %} col-xs col-sm col-md">
+							<a href="{{ site.url | append: site.baseurl }}" title="Go to the home page">
+								Home {% if page.layout == 'home' %}<span class="sr-only">(current)</span>{% endif %}
+							</a>
+						</li>
+
+						{% for main_menu in site.data.main_menu %}
+						<li class="nav-item {% if page.url contains main_menu.slug %}active{% endif %} hidden-sm-down col-md">
+							<a href="{{ main_menu.slug }}" title="{{ main_menu.description }}">
+								{{ main_menu.name }} {% if page.url contains main_menu.slug %}<span class="sr-only">(current)</span>{% endif %}
+							</a>
+						</li>
+						{% endfor %}
+
+					</ul>
+
+				</nav>
+			</div>
+		</div>
+	</div>
+
+{% endif %}

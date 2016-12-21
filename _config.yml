@@ -1,0 +1,40 @@
+# Site settings
+
+title: "Outline Card Stack"
+
+description: "A demo replicating the card stack functionality from The Outline (theoutline.com)."
+keywords: "outline, cards, css"
+
+baseurl: "/outline-card-stack" # the subpath of your site, e.g. /blog
+url: "http://johnpeart.org"
+author: "John Peart"
+logo: "/assets/jp.jpg"
+
+asset-path: "/assets"
+image-path: "/images"
+image-2x-path: "/images/@2x"
+
+# Social settings
+facebook-id: "1053585037989505" # For Facebook OpenGraph integration
+facebook-slug: "john.robert.peart" # Automatically pre-pends http://facebook.com/
+twitter-username: "johnpeart" # Twitter handle i.e. joebloggs
+github-username:  "johnpeart"
+google-site-verification: "GMEFdAl3i-jN_Jkdb_jrS-LWZPUEQ7Bx4fPcyQ7YSCU" # GSV code; proves domain ownership
+
+#Analytics
+disable-analytics: true # Switch to "false" to start GA logging
+google-analytics: "UA-27553664-1" # GA ID code
+
+# Plugins and build settings
+
+permalink: pretty
+markdown: kramdown
+future: false
+sass:
+    sass_dir: _sass
+    sourcemap: true
+
+gems:
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-redirect-from
