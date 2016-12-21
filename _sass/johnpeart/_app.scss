@@ -6,8 +6,15 @@ div#card-stack {
 	width: 100vw;
 	height: 100vh;
 
+	overflow-x: scroll;
+	overflow-y: visible;
+
 	margin: 0;
 	padding: 2rem;
+
+	&::-webkit-scrollbar {
+	    display: none;
+	}
 
 	div.card-stack-card {
 
@@ -41,27 +48,27 @@ div#card-stack {
 		@include box-shadow-shallow;
 
 		&:first-child {
-			transform: translate(20vw, 0) rotate(-15deg);
+			transform: translate(20vw, 10vh) rotate(-15deg);
 			z-index: 1000 !important;
 		}
 		&:nth-child(2) {
-			transform: translate(30vw, -3vh) rotate(-5deg);
+			transform: translate(30vw, 7vh) rotate(-5deg);
 			z-index: 2000 !important;
 		}
 		&:nth-child(3) {
-			transform: translate(40vw, -5vh) rotate(-0);
+			transform: translate(40vw, 5vh) rotate(-0);
 			z-index: 3000 !important;
 		}
 		&:nth-child(4) {
-			transform: translate(50vw, -3vh) rotate(5deg);
+			transform: translate(50vw, 7vh) rotate(5deg);
 			z-index: 2000 !important;
 		}
 		&:nth-child(5) {
-			transform: translate(60vw, 0) rotate(15deg);
+			transform: translate(60vw, 10vh) rotate(15deg);
 			z-index: 1000 !important;
 		}
 		&:nth-child(n+6) {
-			transform: translate(60vw, 0) rotate(15deg);
+			transform: translate(60vw, 10vh) rotate(15deg);
 			z-index: 500 !important;
 			visibility: hidden;
 		}
@@ -94,28 +101,28 @@ div#card-stack {
 	&:hover {
 		div.card-stack-card {
 			&:first-child {
-				transform: translate(0, 0);
+				transform: translate(0, 10vh);
 				z-index: 1000 !important;
 			}
 			&:nth-child(2) {
-				transform: translate(20vw, 0);
+				transform: translate(20vw,10vh);
 				z-index: 2000 !important;
 			}
 			&:nth-child(3) {
-				transform: translate(40vw, 0);
+				transform: translate(40vw, 10vh);
 				z-index: 3000 !important;
 			}
 			&:nth-child(4) {
-				transform: translate(60vw, 0);
+				transform: translate(60vw, 10vh);
 				z-index: 2000 !important;
 			}
 			&:nth-child(5) {
-				transform: translate(80vw, 0);
+				transform: translate(80vw, 10vh);
 				z-index: 1000 !important;
 			}
 			&:nth-child(n+6) {
 				visibility: visible;
-				transform: translate(100vw, 0);
+				transform: translate(100vw, 10vh);
 				z-index: 500 !important;
 			}
 		}
