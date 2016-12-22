@@ -198,6 +198,7 @@ div#card-stack {
 	}
 }
 ```
+
 # Compatability
 
 Tested on:
