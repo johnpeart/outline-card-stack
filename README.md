@@ -12,4 +12,6 @@ Check out the Github Pages site for a [demo](http://johnpeart.org/outline-card-s
 
 Tested on:
 
-- Safari 10.0.2, MacOS Sierra
+- Safari v.10.0.2, MacOS Sierra
+- Chrome v.55.0.2883.95, MacOS Sierra
+- Chrome v.X, Windows 10
