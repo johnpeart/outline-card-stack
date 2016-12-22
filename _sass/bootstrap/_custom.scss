@@ -6,6 +6,8 @@
 $font-size-base: 		1.2rem !default;
 $lead-font-size: 		$font-size-base * 1.5 !default;
 
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
 $body-bg: 				#1d1d1d;
 $body-color: 			#ffffff;
 $body-color-inverse: 	#1d1d1d;
@@ -19,3 +21,14 @@ $link-color-inverse:    $body-bg !default;
 $link-decoration:       underline !default;
 $link-hover-color:      lighten($body-bg, 50%) !default;
 $link-hover-decoration: underline !default;
+
+$code-font-size:              90% !default;
+$code-padding-x:              .4rem !default;
+$code-padding-y:              .2rem !default;
+$code-color:                  #00FF00 !default;
+$code-bg:                     darken($body-bg, 3%) !default;
+
+$pre-bg:                      darken($body-bg, 3%) !default;
+$pre-color:                   $body-color !default;
+$pre-border-color:            #ccc !default;
+$pre-scrollable-max-height:   340px !default;

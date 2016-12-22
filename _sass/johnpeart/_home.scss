@@ -26,3 +26,160 @@ div#home.container-fluid {
 	}
 
 }
+
+div#how-to {
+
+	article#content {
+
+		margin: 0 0 4rem 0;
+
+
+		h1 {
+
+			@include 					text-shadow-shallow;
+
+			text-align: 				center;
+			font-weight: 				600;
+
+			margin: 					4rem 0 2rem 0;
+
+			&:after {
+				content: "."
+			}
+
+		}
+
+		@include media-breakpoint-only(xs) {
+			h1 {
+				font-size: 			$font-size-h1 !important;
+				margin: 			2rem 0 25px 0;
+			}
+		}
+
+		@include media-breakpoint-only(sm) {
+			h1 {
+				margin: 			2rem 0 25px 0;
+			}
+		}
+
+		@include media-breakpoint-between(md,lg) {
+			h1 {
+				margin: 			2rem 0 35px 0;
+			}
+		}
+
+		@include media-breakpoint-only(xs) {
+			p {
+				font-size: 			$font-size-base !important;
+			}
+		}
+
+		@include media-breakpoint-only(sm) {
+			p {
+				font-size: 			$font-size-base * 1.1 !important;
+			}
+		}
+
+
+		> p:first-child:first-letter {
+			float: left;
+			color: $body-color;
+			background: $body-bg;
+			border: 2px solid $body-color;
+			text-stroke: 2px $body-color;
+			text-fill-color: $body-bg;
+			-webkit-text-stroke: 2px $body-color;
+			-webkit-text-fill-color: $body-bg;
+			font-size: $font-size-root * 7;
+			font-weight: 600;
+			line-height: 60px;
+			padding: 1.75rem;
+			margin: 0.45rem 1rem 0.5rem 0;
+		}
+
+
+		@include media-breakpoint-only(xs) {
+			> p:first-child:first-letter {
+				font-size: $font-size-root * 4;
+				padding: 1rem 1.5rem;
+				margin: 0.45rem 1rem 0.5rem 0;
+			}
+		}
+
+		h2, .h2 {
+			text-align: center;
+			margin: 5rem 0 2rem 0;
+			@include text-shadow-shallow;
+
+			&:before {
+				position: relative;
+				display: block;
+				clear: both;
+				content: "";
+				height: 0.3rem;
+				width: 30%;
+				left: 35%;
+				right: 35%;
+				background: $body-color;
+				margin: 0 0 2rem 0;
+				@include box-shadow-shallow;
+			}
+		}
+
+		h3, .h3 {
+			text-align: left;
+			margin: 4rem 0 1rem 0;
+			@include text-shadow-shallow;
+		}
+
+		blockquote {
+			margin: 1.5rem 0 1.5rem 0;
+			padding: 1rem;
+
+			background: darken($body-bg, 3%);
+
+			font-weight: 500;
+
+			p:last-of-type {
+				margin: 0;
+			}
+		}
+
+		// Inline code
+		code {
+			padding: $code-padding-y $code-padding-x;
+			font-size: $code-font-size;
+			color: $code-color;
+			background-color: $code-bg;
+			@include border-radius($border-radius);
+		}
+
+		// Blocks of code
+		pre {
+			font-family: $font-family-monospace;
+			display: block;
+			position: relative;
+			margin: 1rem 0;
+			padding: 1rem;
+			font-size: $code-font-size;
+			background: $pre-bg;
+
+		  // Account for some code outputs that place code tags in pre tags
+			code {
+				padding: 0;
+				font-size: inherit;
+				font-weight: 400;
+				color: $code-color;
+				background-color: transparent;
+				border-radius: 0;
+			}
+		}
+
+
+		table {
+			@extend .table;
+			@extend .table-responsive;
+		}
+
+	}
+}
