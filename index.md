@@ -202,6 +202,7 @@ div#card-stack {
 # Compatability
 
 Tested on:
+
 - Safari 10.0.2 for MacOS Sierra
 - Chrome for MacOS Sierra and Windows 10
 
