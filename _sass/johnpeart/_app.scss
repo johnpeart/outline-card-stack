@@ -2,11 +2,12 @@ div#card-stack {
 
 	display: inline-block;
     position: relative;
+    white-space: nowrap;
 
 	width: 100vw;
-	height: 25rem;
+	height: 35rem;
 
-	overflow-x: scroll;
+	overflow-x: auto;
 	overflow-y: hidden;
 
 	margin: 0;
