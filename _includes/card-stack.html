@@ -1,6 +1,9 @@
-<div class="card-stack">
+<div class="card-stack-container">
 
-	{% for post in site.posts limit: 5 %}
+	<div class="card-stack">
+
+	{% assign posts = site.posts | sort %}
+	{% for post in posts %}
 
 		<div class="card-stack-card">
 			<article>
@@ -19,4 +22,9 @@
 		<div class="card-stack-card-end">
 
 		</div>
+
+		<br class="clear"/>
+
+	</div>
+
 </div>
