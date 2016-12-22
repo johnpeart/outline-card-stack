@@ -1,8 +1,10 @@
-div#card-stack {
+div.card-stack {
 
 	display: inline-block;
     position: relative;
     white-space: nowrap;
+
+    background: $brand-primary;
 
 	width: 100vw;
 	height: 35rem;
