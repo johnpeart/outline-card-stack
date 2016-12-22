@@ -2,7 +2,7 @@
 layout: home
 ---
 
-# What **Outline Card Stack** is
+# What Outline Card Stack is
 
 Outline Card Stack is an HTML and CSS experiment inspired by the card stack elements found on [The Outline](//theoutline.com).
 It's a bit hacky and isn't meant for critical or prime-time things, but it's a cool effect.
