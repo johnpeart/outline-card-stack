@@ -85,18 +85,44 @@ div#card-stack {
 				margin: 0 0 0.5rem 0;
 			}
 
-			p {
-
-				&:last-child {
-					color: $body-bg;
-					margin: 0.3rem 0 0 0;
-				}
-				&:nth-last-child(2) {
-				    margin: 0;
-			    }
-			}
-
 		}
+	}
+
+	div.card-stack-card-end {
+
+		position: absolute;
+		display: inline-block;
+
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+
+		width: 1rem;
+		height: 22.5rem;
+
+		vertical-align: top;
+		font-size: initial;
+		white-space: normal;
+		transition: all 0.3s ease-out;
+
+		padding: 1rem;
+		margin: 0 0 0 0rem;
+
+		background: $card-bg;
+		color: $body-color-inverse;
+
+		@include box-shadow-shallow;
+
+		transform: translate(60vw, 10vh) rotate(15deg);
+		z-index: 1000 !important;
+		visibility: hidden;
+
 	}
 
 	&:hover {
@@ -126,6 +152,13 @@ div#card-stack {
 				transform: translate(100vw, 10vh);
 				z-index: 500 !important;
 			}
+		}
+		div.card-stack-card-end {
+
+			visibility: hidden;
+			transform: translate(120vw, 10vh);
+			z-index: 500 !important;
+
 		}
 	}
 }
