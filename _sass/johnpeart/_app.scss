@@ -176,9 +176,6 @@ div.card-stack {
 
 		margin: 0 auto;
 
-		overflow-x: hidden;
-		overflow-y: visible;
-
 		&::-webkit-scrollbar {
 		    display: none;
 		}
@@ -277,8 +274,10 @@ div.card-stack {
 
 		&:hover {
 
-			overflow-x: auto;
-			overflow-y: auto;
+			overflow-x: visible;
+			overflow-y: visible;
+
+			height: 150rem;
 
 			div.card-stack-card {
 
