@@ -1,8 +1,263 @@
+/* VARIABLES for Card Stack */
+
+/* Standard sizes */
+$card-width: 15rem;
+$card-height: $card-width / (2/3);
+$card-margin: 0 1rem 0 1rem;
+$card-padding: 1rem;
+
+$card-stack-width: 100vw;
+$card-stack-height: $card-height + 6rem;
+
+$card-stack-card-end-width: $card-width/10;
+$card-stack-card-end-height: $card-height;
+
+	/* Transforms */
+	$nth-child-1-translate: calc(-50% - 6/5 * #{$card-width}), 1rem;
+	$nth-child-1-translate-hover: calc(-50% - 2.2 * #{$card-width}), 1rem;
+	$nth-child-1-rotate: -20;
+	$nth-child-1-transform-origin: 100% 0;
+
+	$nth-child-2-translate: calc(-50% - 3/5 * #{$card-width}), 1rem;
+	$nth-child-2-translate-hover: calc(-50% - 1.1 * #{$card-width}), 1rem;
+	$nth-child-2-rotate: $nth-child-1-rotate + 10;
+	$nth-child-2-transform-origin: 75% 0;
+
+	$nth-child-3-translate: -50%, 1rem;
+	$nth-child-3-translate-hover: -50%, 1rem;
+	$nth-child-3-rotate: $nth-child-2-rotate + 10;
+	$nth-child-3-transform-origin: 50% 0;
+
+	$nth-child-4-translate: calc(-50% + 3/5 * #{$card-width}), 1rem;
+	$nth-child-4-translate-hover: calc(-50% + 1.1 * #{$card-width}), 1rem;
+	$nth-child-4-rotate: $nth-child-3-rotate + 10;
+	$nth-child-4-transform-origin: 25% 0;
+
+	$nth-child-5-translate: calc(-50% + 6/5 * #{$card-width}), 1rem;
+	$nth-child-5-translate-hover: calc(-50% + 2.2 * #{$card-width}), 1rem;
+	$nth-child-5-rotate: $nth-child-4-rotate + 10;
+	$nth-child-5-transform-origin: 0% 0;
+
+	$nth-child-gt5-translate: $nth-child-5-translate;
+	$nth-child-gt5-translate-hover: calc(-50% + 3.3 * #{$card-width}), 1rem;
+	$nth-child-gt5-rotate: $nth-child-5-rotate;
+	$nth-child-gt5-transform-origin: $nth-child-5-transform-origin;
+
+	$card-stack-card-end-translate: $nth-child-gt5-translate;
+	$card-stack-card-end-translate-hover: calc(-50% + 4.4 * #{$card-width}), 1rem;
+	$card-stack-card-end-rotate: $nth-child-gt5-rotate;
+	$card-stack-card-end-transform-origin: $nth-child-gt5-transform-origin;
+
+	/* Z-indices */
+	$nth-child-1-z-index: 1000;
+	$nth-child-2-z-index: $nth-child-1-z-index - 5;
+	$nth-child-3-z-index: $nth-child-2-z-index - 5;
+	$nth-child-4-z-index: $nth-child-3-z-index - 5;
+	$nth-child-5-z-index: $nth-child-4-z-index - 5;
+	$nth-child-gt5-z-index: $nth-child-5-z-index - 5;
+
+
+/* Extra small screens */
+$xs-card-width: 15rem;
+$xs-card-height: $xs-card-width / (2/3);
+$xs-card-margin: 0;
+$xs-card-padding: 1rem;
+
+$xs-card-stack-width: 100vw;
+$xs-card-stack-height: $xs-card-height + 6rem;
+
+$xs-card-stack-card-end-width: $xs-card-width/10;
+$xs-card-stack-card-end-height: $xs-card-height;
+
+	/* Transforms */
+	$xs-nth-child-1-translate: -50%, 1rem;
+	$xs-nth-child-1-translate-hover: -50%, 1rem;
+	$xs-nth-child-1-rotate: -5;
+	$xs-nth-child-1-transform-origin: 50% 50%;
+
+	$xs-nth-child-2-translate: -50%, 1rem;
+	$xs-nth-child-2-translate-hover: calc(-50% + 1.1 * #{$xs-card-width}), 1rem;
+	$xs-nth-child-2-rotate: $xs-nth-child-1-rotate + 5;
+	$xs-nth-child-2-transform-origin: 50% 50%;
+
+	$xs-nth-child-3-translate: -50%, 1rem;
+	$xs-nth-child-3-translate-hover: calc(-50% + 2.2 * #{$xs-card-width}), 1rem;
+	$xs-nth-child-3-rotate: $xs-nth-child-2-rotate + 5;
+	$xs-nth-child-3-transform-origin: 50% 50%;
+
+	$xs-nth-child-4-translate: -50%, 1rem;
+	$xs-nth-child-4-translate-hover: calc(-50% + 3.3 * #{$xs-card-width}), 1rem;
+	$xs-nth-child-4-rotate: $xs-nth-child-3-rotate + 5;
+	$xs-nth-child-4-transform-origin: 50% 50%;
+
+	$xs-nth-child-5-translate: -50%, 1rem;
+	$xs-nth-child-5-translate-hover: calc(-50% + 4.4 * #{$xs-card-width}), 1rem;
+	$xs-nth-child-5-rotate: $xs-nth-child-4-rotate + 5;
+	$xs-nth-child-5-transform-origin: 50% 50%;
+
+	$xs-nth-child-gt5-translate: $xs-nth-child-5-translate;
+	$xs-nth-child-gt5-translate-hover: calc(-50% + 5.5 * #{$xs-card-width}), 1rem;
+	$xs-nth-child-gt5-rotate: $xs-nth-child-5-rotate;
+	$xs-nth-child-gt5-transform-origin: $xs-nth-child-5-transform-origin;
+
+	$xs-card-stack-card-end-translate: $xs-nth-child-gt5-translate;
+	$xs-card-stack-card-end-translate-hover: calc(-50% + 6.2 * #{$xs-card-width}), 1rem;
+	$xs-card-stack-card-end-rotate: $xs-nth-child-gt5-rotate;
+	$xs-card-stack-card-end-transform-origin: $xs-nth-child-gt5-transform-origin;
+
+/* Small screens */
+$sm-card-width: 15rem;
+$sm-card-height: $xs-card-width / (2/3);
+$sm-card-margin: 0;
+$sm-card-padding: 1rem;
+
+$sm-card-stack-width: 100vw;
+$sm-card-stack-height: $xs-card-height + 6rem;
+
+$sm-card-stack-card-end-width: $xs-card-width/10;
+$sm-card-stack-card-end-height: $xs-card-height;
+
+	/* Transforms */
+	$sm-nth-child-1-translate: -50%, 1rem;
+	$sm-nth-child-1-translate-hover: -50%, 1rem;
+	$sm-nth-child-1-rotate: -5;
+	$sm-nth-child-1-transform-origin: 50% 50%;
+
+	$sm-nth-child-2-translate: -50%, 1rem;
+	$sm-nth-child-2-translate-hover: calc(-50% + 1.1 * #{$sm-card-width}), 1rem;
+	$sm-nth-child-2-rotate: $xs-nth-child-1-rotate + 5;
+	$sm-nth-child-2-transform-origin: 50% 50%;
+
+	$sm-nth-child-3-translate: -50%, 1rem;
+	$sm-nth-child-3-translate-hover: calc(-50% + 2.2 * #{$sm-card-width}), 1rem;
+	$sm-nth-child-3-rotate: $xs-nth-child-2-rotate + 5;
+	$sm-nth-child-3-transform-origin: 50% 50%;
+
+	$sm-nth-child-4-translate: -50%, 1rem;
+	$sm-nth-child-4-translate-hover: calc(-50% + 3.3 * #{$sm-card-width}), 1rem;
+	$sm-nth-child-4-rotate: $xs-nth-child-3-rotate + 5;
+	$sm-nth-child-4-transform-origin: 50% 50%;
+
+	$sm-nth-child-5-translate: -50%, 1rem;
+	$sm-nth-child-5-translate-hover: calc(-50% + 4.4 * #{$sm-card-width}), 1rem;
+	$sm-nth-child-5-rotate: $xs-nth-child-4-rotate + 5;
+	$sm-nth-child-5-transform-origin: 50% 50%;
+
+	$sm-nth-child-gt5-translate: $xs-nth-child-5-translate;
+	$sm-nth-child-gt5-translate-hover: calc(-50% + 5.5 * #{$sm-card-width}), 1rem;
+	$sm-nth-child-gt5-rotate: $xs-nth-child-5-rotate;
+	$sm-nth-child-gt5-transform-origin: $xs-nth-child-5-transform-origin;
+
+	$sm-card-stack-card-end-translate: $xs-nth-child-gt5-translate;
+	$sm-card-stack-card-end-translate-hover: calc(-50% + 6.2 * #{$sm-card-width}), 1rem;
+	$sm-card-stack-card-end-rotate: $xs-nth-child-gt5-rotate;
+	$sm-card-stack-card-end-transform-origin: $xs-nth-child-gt5-transform-origin;
+
+/* Medium screens */
+$md-card-width: 15rem;
+$md-card-height: $md-card-width / (2/3);
+$md-card-margin: 0;
+$md-card-padding: 1rem;
+
+$md-card-stack-width: 100vw;
+$md-card-stack-height: $md-card-height + 6rem;
+
+$md-card-stack-card-end-width: $md-card-width/10;
+$md-card-stack-card-end-height: $md-card-height;
+
+	/* Transforms */
+	$md-nth-child-1-translate: calc(-50% - 4/6 * #{$md-card-width}), 1rem;
+	$md-nth-child-1-translate-hover: calc(-40% - 1.1 * #{$md-card-width}), 1rem;
+	$md-nth-child-1-rotate: -20;
+	$md-nth-child-1-transform-origin: 100% 0;
+
+	$md-nth-child-2-translate: calc(-50% - 2/6 * #{$md-card-width}), 1rem;
+	$md-nth-child-2-translate-hover: -40%, 1rem;
+	$md-nth-child-2-rotate: $md-nth-child-1-rotate + 10;
+	$md-nth-child-2-transform-origin: 75% 0;
+
+	$md-nth-child-3-translate: -50%, 1rem;
+	$md-nth-child-3-translate-hover: calc(-40% + 1.1 * #{$md-card-width}), 1rem;
+	$md-nth-child-3-rotate: $md-nth-child-2-rotate + 10;
+	$md-nth-child-3-transform-origin: 50% 0;
+
+	$md-nth-child-4-translate: calc(-50% + 2/6 * #{$md-card-width}), 1rem;
+	$md-nth-child-4-translate-hover: calc(-40% + 2.2 * #{$md-card-width}), 1rem;
+	$md-nth-child-4-rotate: $md-nth-child-3-rotate + 10;
+	$md-nth-child-4-transform-origin: 25% 0;
+
+	$md-nth-child-5-translate: calc(-50% + 4/6 * #{$md-card-width}), 1rem;
+	$md-nth-child-5-translate-hover: calc(-40% + 3.3 * #{$md-card-width}), 1rem;
+	$md-nth-child-5-rotate: $md-nth-child-4-rotate + 10;
+	$md-nth-child-5-transform-origin: 0% 0;
+
+	$md-nth-child-gt5-translate: $md-nth-child-5-translate;
+	$md-nth-child-gt5-translate-hover: calc(-40% + 4.4 * #{$md-card-width}), 1rem;
+	$md-nth-child-gt5-rotate: $md-nth-child-5-rotate;
+	$md-nth-child-gt5-transform-origin: $md-nth-child-5-transform-origin;
+
+	$md-card-stack-card-end-translate: $md-nth-child-gt5-translate;
+	$md-card-stack-card-end-translate-hover: calc(-40% + 5.2 * #{$md-card-width}), 1rem;
+	$md-card-stack-card-end-rotate: $md-nth-child-gt5-rotate;
+	$md-card-stack-card-end-transform-origin: $md-nth-child-gt5-transform-origin;
+
+/* Large screens */
+$lg-card-width: 15rem;
+$lg-card-height: $lg-card-width / (2/3);
+$lg-card-margin: 0;
+$lg-card-padding: 1rem;
+
+$lg-card-stack-width: 100vw;
+$lg-card-stack-height: $lg-card-height + 6rem;
+
+$lg-card-stack-card-end-width: $lg-card-width/10;
+$lg-card-stack-card-end-height: $lg-card-height;
+
+	/* Transforms */
+	$lg-nth-child-1-translate: calc(-50% - 6/5 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-1-translate-hover: calc(-50% - 1.1 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-1-rotate: -20;
+	$lg-nth-child-1-transform-origin: 100% 0;
+
+	$lg-nth-child-2-translate: calc(-50% - 3/5 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-2-translate-hover: -50%, 1rem;
+	$lg-nth-child-2-rotate: $lg-nth-child-1-rotate + 10;
+	$lg-nth-child-2-transform-origin: 75% 0;
+
+	$lg-nth-child-3-translate: -50%, 1rem;
+	$lg-nth-child-3-translate-hover: calc(-50% + 1.1 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-3-rotate: $lg-nth-child-2-rotate + 10;
+	$lg-nth-child-3-transform-origin: 50% 0;
+
+	$lg-nth-child-4-translate: calc(-50% + 3/5 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-4-translate-hover: calc(-50% + 2.2 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-4-rotate: $lg-nth-child-3-rotate + 10;
+	$lg-nth-child-4-transform-origin: 25% 0;
+
+	$lg-nth-child-5-translate: calc(-50% + 6/5 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-5-translate-hover: calc(-50% + 3.3 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-5-rotate: $lg-nth-child-4-rotate + 10;
+	$lg-nth-child-5-transform-origin: 0% 0;
+
+	$lg-nth-child-gt5-translate: $lg-nth-child-5-translate;
+	$lg-nth-child-gt5-translate-hover: calc(-50% + 4.4 * #{$lg-card-width}), 1rem;
+	$lg-nth-child-gt5-rotate: $lg-nth-child-5-rotate;
+	$lg-nth-child-gt5-transform-origin: $lg-nth-child-5-transform-origin;
+
+	$lg-card-stack-card-end-translate: $lg-nth-child-gt5-translate;
+	$lg-card-stack-card-end-translate-hover: calc(-50% + 5.2 * #{$lg-card-width}), 1rem;
+	$lg-card-stack-card-end-rotate: $lg-nth-child-gt5-rotate;
+	$lg-card-stack-card-end-transform-origin: $lg-nth-child-gt5-transform-origin;
+
+
 .card-stack-container {
 	@extend .container-fluid;
 
 	padding: 0;
 	margin: 0;
+
+	height: $card-stack-height;
+
 }
 
 div.card-stack {
@@ -11,10 +266,10 @@ div.card-stack {
     position: relative;
     white-space: nowrap;
 
-    background: $brand-primary;
+//    background: lighten($brand-primary, 20%);
 
-	width: 100vw;
-	height: 35rem;
+	width: $card-stack-width;
+	height: $card-stack-height;
 
 	margin: 0;
 	padding: 0;
@@ -28,70 +283,64 @@ div.card-stack {
 		position: absolute;
 		display: inline-block;
 
-	    top: 0;
-	    right: 0;
-	    bottom: 0;
-	    left: 0;
+		left: 50%;
 
 	    -webkit-user-select: none;
 	    -moz-user-select: none;
 	    -ms-user-select: none;
 	    user-select: none;
 
-		width: 15rem;
-		height: 22.5rem;
+		width: $card-width;
+		height: $card-height;
 
 		vertical-align: top;
 		font-size: initial;
 		white-space: normal;
+
 		transition: all 0.3s ease-out;
 
-		padding: 1rem;
-		margin: 0 0 0 2rem;
+		padding: $card-padding;
+		margin: $card-margin;
 
 		background: $card-bg;
 		color: $body-color-inverse;
 
-		@include box-shadow-shallow;
 
-		&:first-child {
-			transform: translate(20vw, 10vh) rotate(-15deg);
-			z-index: 1000 !important;
+		&:nth-child(1) {
+			transform: translate($nth-child-1-translate) rotate(#{$nth-child-1-rotate}deg);
+			transform-origin: $nth-child-1-transform-origin;
+			z-index: $nth-child-1-z-index;
 		}
 		&:nth-child(2) {
-			transform: translate(30vw, 7vh) rotate(-5deg);
-			z-index: 2000 !important;
+			transform: translate($nth-child-2-translate) rotate(#{$nth-child-2-rotate}deg);
+			transform-origin: $nth-child-2-transform-origin;
+			z-index: $nth-child-2-z-index;
 		}
 		&:nth-child(3) {
-			transform: translate(40vw, 5vh) rotate(-0);
-			z-index: 3000 !important;
+			transform: translate($nth-child-3-translate) rotate(#{$nth-child-3-rotate}deg);
+			transform-origin: $nth-child-3-transform-origin;
+			z-index: $nth-child-3-z-index;
 		}
 		&:nth-child(4) {
-			transform: translate(50vw, 7vh) rotate(5deg);
-			z-index: 2000 !important;
+			transform: translate($nth-child-4-translate) rotate(#{$nth-child-4-rotate}deg);
+			transform-origin: $nth-child-4-transform-origin;
+			z-index: $nth-child-4-z-index;
 		}
 		&:nth-child(5) {
-			transform: translate(60vw, 10vh) rotate(15deg);
-			z-index: 1000 !important;
+			transform: translate($nth-child-5-translate) rotate(#{$nth-child-5-rotate}deg);
+			transform-origin: $nth-child-5-transform-origin;
+			z-index: $nth-child-5-z-index;
 		}
 		&:nth-child(n+6) {
-			transform: translate(60vw, 10vh) rotate(15deg);
-			z-index: 500 !important;
+			transform: translate($nth-child-gt5-translate) rotate(#{$nth-child-gt5-rotate}deg);
+			transform-origin: $nth-child-gt5-transform-origin;
+			z-index: $nth-child-gt5-z-index;
 			visibility: hidden;
 		}
 
-		article {
 
+		@include box-shadow-shallow;
 
-			a {
-				color: $link-color-inverse;
-			}
-
-			h2 {
-				margin: 0 0 0.5rem 0;
-			}
-
-		}
 	}
 
 	div.card-stack-card-end {
@@ -99,23 +348,17 @@ div.card-stack {
 		position: absolute;
 		display: inline-block;
 
-	    top: 0;
-	    right: 0;
-	    bottom: 0;
-	    left: 0;
+	    left:50%;
 
 	    -webkit-user-select: none;
 	    -moz-user-select: none;
 	    -ms-user-select: none;
 	    user-select: none;
 
-		width: 1rem;
-		height: 22.5rem;
+		width: $card-stack-card-end-width;
+		height: $card-stack-card-end-height;
 
-		padding: 1rem;
-		margin: 0 0 0 0rem;
-
-		transform: translate(0vw, 10vh) rotate(15deg);
+		transform: translate($card-stack-card-end-translate) rotate(#{$nth-child-gt5-rotate}deg);
 		z-index: 1000 !important;
 		visibility: hidden;
 
@@ -124,217 +367,445 @@ div.card-stack {
 	&:hover {
 
 		overflow-x: auto;
-		overflow-y: hidden;
+		overflow-y: auto;
+
+		height: $card-stack-height;
 
 		div.card-stack-card {
-			&:first-child {
-				transform: translate(0, 10vh);
-				z-index: 1000 !important;
+
+			&:nth-child(1) {
+				transform: translate($nth-child-1-translate-hover);
 			}
 			&:nth-child(2) {
-				transform: translate(20vw,10vh);
-				z-index: 2000 !important;
+				transform: translate($nth-child-2-translate-hover);
 			}
 			&:nth-child(3) {
-				transform: translate(40vw, 10vh);
-				z-index: 3000 !important;
+				transform: translate($nth-child-3-translate-hover);
 			}
 			&:nth-child(4) {
-				transform: translate(60vw, 10vh);
-				z-index: 2000 !important;
+				transform: translate($nth-child-4-translate-hover);
 			}
 			&:nth-child(5) {
-				transform: translate(80vw, 10vh);
-				z-index: 1000 !important;
+				transform: translate($nth-child-5-translate-hover);
 			}
 			&:nth-child(n+6) {
 				visibility: visible;
-				transform: translate(100vw, 10vh);
-				z-index: 500 !important;
+				transform: translate($nth-child-gt5-translate-hover);
 			}
+			&:nth-child(n+7) {
+				visibility: hidden;
+				transform: translate($nth-child-gt5-translate-hover);
+			}
+
 		}
+
 		div.card-stack-card-end {
 
-			visibility: hidden;
-			transform: translate(120vw, 10vh);
-			z-index: 500 !important;
+			visibility: visible;
+			transform: translate($card-stack-card-end-translate-hover);
 
 		}
 	}
+
 }
 
 
 @include media-breakpoint-only(xs) {
 
+	.card-stack-container {
+
+		padding: 0;
+		margin: 0;
+
+		height: $xs-card-stack-height;
+
+	}
+
 	div.card-stack {
 
-		position: relative;
-		display: inline-flex;
-
-		width: 100%;
-		height: 100vh;
-
-		margin: 0 auto;
-
-		&::-webkit-scrollbar {
-		    display: none;
-		}
-
-		text-align: center;
+		width: $xs-card-stack-width;
+		height: $xs-card-stack-height;
 
 		div.card-stack-card {
 
-			position: absolute;
-			display: block;
+			width: $xs-card-width;
+			height: $xs-card-height;
 
-		    top: 2rem;
-		    bottom: 2rem;
+			padding: $xs-card-padding;
+			margin: $xs-card-margin;
 
-		    margin: 0 auto;
 
-			width: 15rem;
-			height: 22.5rem;
-
-			&:first-child {
-				transform: translate(0, 0) rotate(0deg);
-				z-index: 1000 !important;
+			&:nth-child(1) {
+				transform: translate($xs-nth-child-1-translate) rotate(#{$xs-nth-child-1-rotate}deg);
+				transform-origin: $xs-nth-child-1-transform-origin;
 			}
 			&:nth-child(2) {
-				transform: translate(0, 0) rotate(5deg);
-				z-index: 999 !important;
+				transform: translate($xs-nth-child-2-translate) rotate(#{$xs-nth-child-2-rotate}deg);
+				transform-origin: $xs-nth-child-2-transform-origin;
 			}
 			&:nth-child(3) {
-				transform: translate(0, 0) rotate(10deg);
-				z-index: 998 !important;
+				transform: translate($xs-nth-child-3-translate) rotate(#{$xs-nth-child-3-rotate}deg);
+				transform-origin: $xs-nth-child-3-transform-origin;
 			}
 			&:nth-child(4) {
-				transform: translate(0, 0) rotate(15deg);
-				z-index: 997 !important;
+				transform: translate($xs-nth-child-4-translate) rotate(#{$xs-nth-child-4-rotate}deg);
+				transform-origin: $xs-nth-child-4-transform-origin;
 			}
 			&:nth-child(5) {
-				transform: translate(0, 0) rotate(20deg);
-				z-index: 996 !important;
+				transform: translate($xs-nth-child-5-translate) rotate(#{$xs-nth-child-5-rotate}deg);
+				transform-origin: $xs-nth-child-5-transform-origin;
 			}
 			&:nth-child(n+6) {
-				transform: translate(0, 0) rotate(20deg);
-				z-index: 995 !important;
-				visibility: hidden;
+				transform: translate($xs-nth-child-gt5-translate) rotate(#{$xs-nth-child-gt5-rotate}deg);
+				transform-origin: $xs-nth-child-gt5-transform-origin;
 			}
 
-			article {
-
-
-				a {
-					color: $link-color-inverse;
-				}
-
-				h2 {
-					margin: 0 0 0.5rem 0;
-				}
-
-			}
 		}
 
 		div.card-stack-card-end {
 
-			position: absolute;
-			display: inline-block;
+			width: $xs-card-stack-card-end-width;
+			height: $xs-card-stack-card-end-height;
 
-		    top: 0;
-		    right: 0;
-		    bottom: 0;
-		    left: 0;
-
-		    -webkit-user-select: none;
-		    -moz-user-select: none;
-		    -ms-user-select: none;
-		    user-select: none;
-
-			width: 1rem;
-			height: 22.5rem;
-
-			vertical-align: top;
-			font-size: initial;
-			white-space: normal;
-			transition: all 0.3s ease-out;
-
-			padding: 1rem;
-			margin: 0 0 0 0rem;
-
-			background: $card-bg;
-			color: $body-color-inverse;
-
-			@include box-shadow-shallow;
-
-			transform: translate(0vw, 10vh) rotate(15deg);
-			z-index: 1000 !important;
-			visibility: hidden;
+			transform: translate($xs-card-stack-card-end-translate) rotate(#{$xs-card-stack-card-end-rotate}deg);
 
 		}
 
 		&:hover {
 
-			overflow-x: visible;
-			overflow-y: visible;
-
-			height: 150rem;
+			height: $xs-card-stack-height;
 
 			div.card-stack-card {
 
-				position: absolute;
-				display: block;
-
-				&:first-child {
-					transform: translate(0, 0) rotate(0deg);
-					z-index: 1000 !important;
+				&:nth-child(1) {
+					transform: translate($xs-nth-child-1-translate-hover);
 				}
 				&:nth-child(2) {
-					transform: translate(0, 25rem) rotate(0deg);
-					z-index: 999 !important;
+					transform: translate($xs-nth-child-2-translate-hover);
 				}
 				&:nth-child(3) {
-					transform: translate(0, 50rem) rotate(0deg);
-					z-index: 998 !important;
+					transform: translate($xs-nth-child-3-translate-hover);
 				}
 				&:nth-child(4) {
-					transform: translate(0, 75rem) rotate(0deg);
-					z-index: 997 !important;
+					transform: translate($xs-nth-child-4-translate-hover);
 				}
 				&:nth-child(5) {
-					transform: translate(0, 100rem) rotate(0deg);
-					z-index: 996 !important;
+					transform: translate($xs-nth-child-5-translate-hover);
 				}
 				&:nth-child(n+6) {
-					transform: translate(0, 125rem) rotate(0deg);
-					z-index: 995 !important;
+					transform: translate($xs-nth-child-gt5-translate-hover);
+				}
+				&:nth-child(n+7) {
+					transform: translate($xs-nth-child-gt5-translate-hover);
 				}
 
 			}
+
 			div.card-stack-card-end {
-
-				visibility: hidden;
-				transform: translate(0, 125rem);
-				z-index: 500 !important;
-
+				transform: translate($xs-card-stack-card-end-translate-hover);
 			}
 		}
+
 	}
 
 }
 
 @include media-breakpoint-only(sm) {
 
+	.card-stack-container {
+
+		padding: 0;
+		margin: 0;
+
+		height: $sm-card-stack-height;
+
+	}
+
+	div.card-stack {
+
+		width: $sm-card-stack-width;
+		height: $sm-card-stack-height;
+
+		div.card-stack-card {
+
+			width: $sm-card-width;
+			height: $sm-card-height;
+
+			padding: $sm-card-padding;
+			margin: $sm-card-margin;
+
+
+			&:nth-child(1) {
+				transform: translate($sm-nth-child-1-translate) rotate(#{$sm-nth-child-1-rotate}deg);
+				transform-origin: $sm-nth-child-1-transform-origin;
+			}
+			&:nth-child(2) {
+				transform: translate($sm-nth-child-2-translate) rotate(#{$sm-nth-child-2-rotate}deg);
+				transform-origin: $sm-nth-child-2-transform-origin;
+			}
+			&:nth-child(3) {
+				transform: translate($sm-nth-child-3-translate) rotate(#{$sm-nth-child-3-rotate}deg);
+				transform-origin: $sm-nth-child-3-transform-origin;
+			}
+			&:nth-child(4) {
+				transform: translate($sm-nth-child-4-translate) rotate(#{$sm-nth-child-4-rotate}deg);
+				transform-origin: $sm-nth-child-4-transform-origin;
+			}
+			&:nth-child(5) {
+				transform: translate($sm-nth-child-5-translate) rotate(#{$sm-nth-child-5-rotate}deg);
+				transform-origin: $sm-nth-child-5-transform-origin;
+			}
+			&:nth-child(n+6) {
+				transform: translate($sm-nth-child-gt5-translate) rotate(#{$sm-nth-child-gt5-rotate}deg);
+				transform-origin: $sm-nth-child-gt5-transform-origin;
+			}
+
+		}
+
+		div.card-stack-card-end {
+
+			width: $sm-card-stack-card-end-width;
+			height: $sm-card-stack-card-end-height;
+
+			transform: translate($sm-card-stack-card-end-translate) rotate(#{$sm-card-stack-card-end-rotate}deg);
+
+		}
+
+		&:hover {
+
+			height: $sm-card-stack-height;
+
+			div.card-stack-card {
+
+				&:nth-child(1) {
+					transform: translate($sm-nth-child-1-translate-hover);
+				}
+				&:nth-child(2) {
+					transform: translate($sm-nth-child-2-translate-hover);
+				}
+				&:nth-child(3) {
+					transform: translate($sm-nth-child-3-translate-hover);
+				}
+				&:nth-child(4) {
+					transform: translate($sm-nth-child-4-translate-hover);
+				}
+				&:nth-child(5) {
+					transform: translate($sm-nth-child-5-translate-hover);
+				}
+				&:nth-child(n+6) {
+					transform: translate($sm-nth-child-gt5-translate-hover);
+				}
+				&:nth-child(n+7) {
+					transform: translate($sm-nth-child-gt5-translate-hover);
+				}
+
+			}
+
+			div.card-stack-card-end {
+				transform: translate($sm-card-stack-card-end-translate-hover);
+			}
+		}
+
+	}
 
 }
 
 @include media-breakpoint-only(md) {
 
+	.card-stack-container {
+
+		padding: 0;
+		margin: 0;
+
+		height: $md-card-stack-height;
+
+	}
+
+	div.card-stack {
+
+		width: $md-card-stack-width;
+		height: $md-card-stack-height;
+
+		div.card-stack-card {
+
+			width: $md-card-width;
+			height: $md-card-height;
+
+			padding: $md-card-padding;
+			margin: $md-card-margin;
+
+
+			&:nth-child(1) {
+				transform: translate($md-nth-child-1-translate) rotate(#{$md-nth-child-1-rotate}deg);
+				transform-origin: $md-nth-child-1-transform-origin;
+			}
+			&:nth-child(2) {
+				transform: translate($md-nth-child-2-translate) rotate(#{$md-nth-child-2-rotate}deg);
+				transform-origin: $md-nth-child-2-transform-origin;
+			}
+			&:nth-child(3) {
+				transform: translate($md-nth-child-3-translate) rotate(#{$md-nth-child-3-rotate}deg);
+				transform-origin: $md-nth-child-3-transform-origin;
+			}
+			&:nth-child(4) {
+				transform: translate($md-nth-child-4-translate) rotate(#{$md-nth-child-4-rotate}deg);
+				transform-origin: $md-nth-child-4-transform-origin;
+			}
+			&:nth-child(5) {
+				transform: translate($md-nth-child-5-translate) rotate(#{$md-nth-child-5-rotate}deg);
+				transform-origin: $md-nth-child-5-transform-origin;
+			}
+			&:nth-child(n+6) {
+				transform: translate($md-nth-child-gt5-translate) rotate(#{$md-nth-child-gt5-rotate}deg);
+				transform-origin: $md-nth-child-gt5-transform-origin;
+			}
+
+		}
+
+		div.card-stack-card-end {
+
+			width: $md-card-stack-card-end-width;
+			height: $md-card-stack-card-end-height;
+
+			transform: translate($md-card-stack-card-end-translate) rotate(#{$md-card-stack-card-end-rotate}deg);
+
+		}
+
+		&:hover {
+
+			height: $md-card-stack-height;
+
+			div.card-stack-card {
+
+				&:nth-child(1) {
+					transform: translate($md-nth-child-1-translate-hover);
+				}
+				&:nth-child(2) {
+					transform: translate($md-nth-child-2-translate-hover);
+				}
+				&:nth-child(3) {
+					transform: translate($md-nth-child-3-translate-hover);
+				}
+				&:nth-child(4) {
+					transform: translate($md-nth-child-4-translate-hover);
+				}
+				&:nth-child(5) {
+					transform: translate($md-nth-child-5-translate-hover);
+				}
+				&:nth-child(n+6) {
+					transform: translate($md-nth-child-gt5-translate-hover);
+				}
+				&:nth-child(n+7) {
+					transform: translate($md-nth-child-gt5-translate-hover);
+				}
+
+			}
+
+			div.card-stack-card-end {
+				transform: translate($md-card-stack-card-end-translate-hover);
+			}
+		}
+
+	}
 
 }
 
 @include media-breakpoint-only(lg) {
 
+	.card-stack-container {
+
+		padding: 0;
+		margin: 0;
+
+		height: $lg-card-stack-height;
+
+	}
+
+	div.card-stack {
+
+		width: $lg-card-stack-width;
+		height: $lg-card-stack-height;
+
+		div.card-stack-card {
+
+			width: $lg-card-width;
+			height: $lg-card-height;
+
+			padding: $lg-card-padding;
+			margin: $lg-card-margin;
+
+
+			&:nth-child(1) {
+				transform: translate($lg-nth-child-1-translate) rotate(#{$lg-nth-child-1-rotate}deg);
+				transform-origin: $lg-nth-child-1-transform-origin;
+			}
+			&:nth-child(2) {
+				transform: translate($lg-nth-child-2-translate) rotate(#{$lg-nth-child-2-rotate}deg);
+				transform-origin: $lg-nth-child-2-transform-origin;
+			}
+			&:nth-child(3) {
+				transform: translate($lg-nth-child-3-translate) rotate(#{$lg-nth-child-3-rotate}deg);
+				transform-origin: $lg-nth-child-3-transform-origin;
+			}
+			&:nth-child(4) {
+				transform: translate($lg-nth-child-4-translate) rotate(#{$lg-nth-child-4-rotate}deg);
+				transform-origin: $lg-nth-child-4-transform-origin;
+			}
+			&:nth-child(5) {
+				transform: translate($lg-nth-child-5-translate) rotate(#{$lg-nth-child-5-rotate}deg);
+				transform-origin: $lg-nth-child-5-transform-origin;
+			}
+			&:nth-child(n+6) {
+				transform: translate($lg-nth-child-gt5-translate) rotate(#{$lg-nth-child-gt5-rotate}deg);
+				transform-origin: $lg-nth-child-gt5-transform-origin;
+			}
+
+		}
+
+		div.card-stack-card-end {
+
+			width: $lg-card-stack-card-end-width;
+			height: $lg-card-stack-card-end-height;
+
+			transform: translate($lg-card-stack-card-end-translate) rotate(#{$lg-card-stack-card-end-rotate}deg);
+
+		}
+
+		&:hover {
+
+			height: $lg-card-stack-height;
+
+			div.card-stack-card {
+
+				&:nth-child(1) {
+					transform: translate($lg-nth-child-1-translate-hover);
+				}
+				&:nth-child(2) {
+					transform: translate($lg-nth-child-2-translate-hover);
+				}
+				&:nth-child(3) {
+					transform: translate($lg-nth-child-3-translate-hover);
+				}
+				&:nth-child(4) {
+					transform: translate($lg-nth-child-4-translate-hover);
+				}
+				&:nth-child(5) {
+					transform: translate($lg-nth-child-5-translate-hover);
+				}
+				&:nth-child(n+6) {
+					transform: translate($lg-nth-child-gt5-translate-hover);
+				}
+				&:nth-child(n+7) {
+					transform: translate($lg-nth-child-gt5-translate-hover);
+				}
+
+			}
+
+			div.card-stack-card-end {
+				transform: translate($lg-card-stack-card-end-translate-hover);
+			}
+		}
+
+	}
 
 }
-
-.clear { clear: both; }
