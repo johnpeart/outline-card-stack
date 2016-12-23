@@ -27,6 +27,22 @@ div#home.container-fluid {
 
 }
 
+div.card-stack-container {
+
+	article {
+
+		a {
+			color: $link-color-inverse;
+		}
+
+		h2 {
+			margin: 0 0 0.5rem 0;
+		}
+
+	}
+
+}
+
 div#how-to {
 
 	article#content {
