@@ -13,6 +13,7 @@ Tested on:
 
 - Safari 10.0.2 for MacOS Sierra
 - Chrome for MacOS Sierra and Windows 10
+- Safari for iOS 10.0.2
 
 ## Source code
 
