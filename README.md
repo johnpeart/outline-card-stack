@@ -6,7 +6,7 @@
 
 I wanted to learn how to recreate the same stacked cards effect using purely CSS3 and HTML markup, including how the cards fan outwards when hovered over by the user. So I created this to show how I'm doing it.
 
-Check out the Github Pages site for a [demo](http://johnpeart.org/outline-card-stack/).
+Check out the Github Pages site for a [demo](http://jrpeart.com/outline-card-stack/).
 
 ## Compatability
 
