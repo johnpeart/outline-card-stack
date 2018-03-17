@@ -6,7 +6,7 @@ description: "A demo replicating the card stack functionality from The Outline (
 keywords: "outline, cards, css"
 
 baseurl: "/outline-card-stack" # the subpath of your site, e.g. /blog
-url: "https://johnpe.art"
+url: "https://www.johnpe.art"
 author: "John Peart"
 logo: "/assets/jp.jpg"
 
